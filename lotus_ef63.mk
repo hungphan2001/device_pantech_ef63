@@ -21,12 +21,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/pantech/ef63/ef63.mk)
 
 # Inherit some common DotOS stuff.
-$(call inherit-product, vendor/superior/config/common.mk)
+$(call inherit-product, vendor/lotus/config/common_full_phone.mk)
 
 # Call the proprietary setup
 $(call inherit-product-if-exists, vendor/pantech/ef63/ef63-vendor.mk)
 
-PRODUCT_NAME := superior_ef63
+PRODUCT_NAME := lotus_ef63
 PRODUCT_DEVICE := ef63
 PRODUCT_MANUFACTURER := PANTECH
 PRODUCT_MODEL := VEGA IRON 2
@@ -35,6 +35,9 @@ PRODUCT_BRAND := PANTECH
 TARGET_VENDOR := PANTECH
 TARGET_VENDOR_PRODUCT_NAME := ef63
 TARGET_VENDOR_DEVICE_NAME := ef63
+
+# Official
+export LOTUS_BUILD_TYPE=Official
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="ef63-user 6.0.1 MHC19Q ZNH2KAS1KN release-keys" 
